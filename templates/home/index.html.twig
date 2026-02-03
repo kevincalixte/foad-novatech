@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{page.title}}{% endblock %}
+
+{% block body %}
+<div class="bg-[url('assets/img/tech.jpg'))] h-screen bg-cover bg-norepeat text-white
+ flex items-start justify-center text-center pt-40">
+<div class="space-y-10">
+<h1 class="text-3xl">{{page.message}}</h1>
+<p class="text-xl">{{page.slogan}}</p>
+</div>
+</div>
+{% endblock %}
