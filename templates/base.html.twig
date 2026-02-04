@@ -18,20 +18,28 @@
 		{% endblock %}
 	</head>
 
-	<body class="select-none bg-black">
-    <nav> 
-	{% block nav %}
+	<body class="select-none bg-black min-h-screen flex flex-col text-white">
 
-	<ul class="flex space-x-5 p-3 text-white fixed bg-white/10 w-full">
+	{# HEADER #}
+    <nav> 
+	<ul class="flex justify-center items-center space-x-5 p-3 bg-white/10 w-full">
+	<li><img class="size-5 rounded-full" src={{logo}} alt=""></li>
 	{% for menu in menus %}
 	<li class="cursor-pointer hover:text-white/80 hover:underline underline-offset-10"><a class="capitalize" href="{{ path((menu)) }}">{{menu}}</a></li>
 	{% endfor %}
 	</ul>
-
-    {% endblock %}
 	</nav>
 
+	{# MAIN #}
+	<main class="flex-1 [&_h1]:text-4xl [&_h2]:text-3xl [&_li]:text-2xl">
 	{% block body %}{% endblock %}
+	</main>
+
+	{# FOOTER #}
+	<footer class="text-white text-center p-10 bg-white/10 mt-auto">
+	 &copy; NovaTech {{ year is defined ? year : "now"|date("Y") }}
+	</footer>
+	
 	</body>
 
 </html>

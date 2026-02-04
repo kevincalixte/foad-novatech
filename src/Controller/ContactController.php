@@ -11,9 +11,11 @@ final class ContactController extends AbstractController
     #[Route('/contact', name: 'contact')]
     public function index(): Response
     {
-     $page = ["title" => "NovaTech - Contact"];
+     $page = ["title" => "NovaTech - Contact", "subject" => "Contact Us"];
+     $contact = ["email" => "twig@twig.twig", "phone" => "0102030405", "adress" => "1 Twig Street, Twig City"];
         return $this->render('contact/index.html.twig', [
             "page" => $page,
+            "contact" => $contact,
         ]);
     }
 }

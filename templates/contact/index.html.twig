@@ -2,3 +2,23 @@
 
 {% block title %}{{page.title}}{% endblock %}
 
+{% block body %}
+<div class="flex flex-col items-center justify-center min-h-[60vh]">
+      <h1 class="mb-6">{{page.subject}}</h1>
+     <form action="" method="post" class="flex flex-col space-y-3 w-1/4 mt-10 [&_input]:border [&_input]:border-white/10 [&_input]:p-2 
+       [&_textarea]:p-2   [&_textarea]:h-40 [&_textarea]:border [&_textarea]:border-white/10 ">
+     <input type="text" name="email" placeholder="Enter your email">
+     <input type="text" name="phone" placeholder="Enter your phone">
+     <textarea name="message" placeholder="Enter your message"></textarea>
+     <input type="submit" name="submit" class="cursor-pointer hover:bg-white/10">
+     </form>
+</div>
+<div class="text-center">
+<h2>Our Informations</h2>
+<ul>
+<li>{{contact.email}}</li>
+<li>{{contact.phone}}</li>
+<li>{{contact.adress}}</li>
+</ul>
+</div>
+{% endblock %}

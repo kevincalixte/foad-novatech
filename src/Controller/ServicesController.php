@@ -11,9 +11,11 @@ final class ServicesController extends AbstractController
     #[Route('/services', name: 'services')]
     public function index(): Response
     {
-        $page = ["title" => "NovaTech - Services"];
+        $page = ["title" => "NovaTech - Services", "subject" => "Our Services"];
+        $services = ["Web Development","Technical Consulting","Code Audit","Application Maintenance"];
         return $this->render('services/index.html.twig', [
             'page' => $page,
+            'services' => $services,
         ]);
     }
 }
