@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{page.title}}{% endblock %}
 
-{% block body %}
+{# FOAD 04-02 #}
+{# {% block title %}{{page.title}}{% endblock %} #}
+{# {% block body %} 
 <div class="flex flex-col items-center justify-center min-h-[60vh]">
       <h1 class="mb-6">{{page.subject}}</h1>
       <ul class="space-y-2">
@@ -11,4 +12,34 @@
             {% endfor %}
       </ul>
 </div>
+{% endblock %} #}
+
+{# FOAD 06-04 #}
+
+{% block title %}Services{% endblock %}
+
+{% block body %}
+<h1>Services</h1>
+{%  for service in services %} 
+<ul>
+<li>{{service.id}}</li>
+<li>{{service.name}}</li>
+<li>{{service.description}}</li>
+<li>{{service.createdAt|date("m/d/Y")}}</li>
+<li>
+      <a  href="{{ path('show_service', {'id': service.id}) }}">Show Service</a>
+    <a class="text-orange-500" href="{{ path('edit_service', {'id': service.id}) }}">Edit Service</a>
+
+<form method="post"  action="{{ path('delete_service', {'id': service.id}) }}" 
+onsubmit="return confirm('Are you sure to delete this service ?');">
+<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service.id) }}">
+<button class="text-red-500 mt-5 cursor-pointer">Delete</button>
+</form>
+
+</li>
+
+</ul>
+
+ {% endfor %}
 {% endblock %}
+ 

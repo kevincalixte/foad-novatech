@@ -31,7 +31,19 @@
 	</nav>
 
 	{# MAIN #}
-	<main class="flex-1 [&_h1]:text-4xl [&_h2]:text-3xl [&_li]:text-2xl">
+	<main class="flex-1 
+	[&_h1]:text-4xl
+	[&_h1]:mb-5
+	[&_h1]:text-center
+	[&_h2]:text-3xl 
+	[&_ul]:flex [&_ul]:flex-col [&_ul]:justify-center [&_ul]:items-center  [&_ul]:space-y-5
+	[&_li]:text-2xl [&_li]:border [&_li]:p-5
+	[&_a]:border [&_a]:p-3 [&_a]:border-white/40 
+	[&_input]:border [&_input]:p-2  [&_input]:ml-2
+	[&_textarea]:border [&_textarea]:ml-2
+	[&_button]:border [&_button]:p-2
+	[&_form]:flex [&_form]:flex-col [&_form]:items-center [&_form]:space-y-5
+	">
 	{% block body %}{% endblock %}
 	</main>
 

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Service{% endblock %}
+
+{% block body %}
+<h1>Edit Service</h1>
+    {{ form_start(formulaire) }}
+    {{ form_row(formulaire.name) }}
+    {{ form_row(formulaire.description) }}
+    <button>Modify</button>
+    {{ form_end(formulaire) }}
+  
+</form>
+{% endblock %}
+
+

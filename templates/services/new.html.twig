@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Service{% endblock %}
+
+{% block body %}
+    {{ form_start(formulaire) }}
+    {{ form_row(formulaire.name) }}
+    {{ form_row(formulaire.description) }}
+    <button>Envoyer</button>
+    {{ form_end(formulaire) }}
+{% endblock %}
