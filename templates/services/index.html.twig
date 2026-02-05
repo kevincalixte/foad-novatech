@@ -25,6 +25,7 @@
 <li>{{service.id}}</li>
 <li>{{service.name}}</li>
 <li>{{service.description}}</li>
+<li>{{service.isActive ? "yes" : "no"}}</li>
 <li>{{service.createdAt|date("m/d/Y")}}</li>
 <li>
       <a  href="{{ path('show_service', {'id': service.id}) }}">Show Service</a>

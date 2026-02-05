@@ -55,7 +55,7 @@ final class ServicesController extends AbstractController
     }
 
     //READ
-    #[Route('/services/{id}', name: 'show_service')]
+    #[Route('/services/{id}', name: 'show_service', methods: ['GET'])]
     public function show(Service $services)
     {
         return $this->render("services/show.html.twig", [
@@ -83,7 +83,7 @@ final class ServicesController extends AbstractController
     }
 
     //DELETE
-    #[Route('/services/{id}', name: 'delete_service', methods: ["POST"])]
+    #[Route('/services/delete/{id}', name: 'delete_service', methods: ["POST"])]
     public function delete(Request $request,Service $service, EntityManagerInterface $em): Response
     {
          if ($this->isCsrfTokenValid('delete'.$service->getId(), $request->request->get('_token'))) {
